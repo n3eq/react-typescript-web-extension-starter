@@ -52,7 +52,7 @@ function executeScript(position: number): void {
 export function Popup() {
     // Sends the `popupMounted` event
     React.useEffect(() => {
-        browser.runtime.sendMessage({ popupMounted: true });
+        browser.runtime.sendMessage({popupMounted: true});
     }, []);
 
     // Renders the component tree

@@ -8,3 +8,20 @@ browser.runtime.onMessage.addListener((request: { popupMounted: boolean }) => {
         console.log("backgroundPage notified that Popup.tsx has mounted.");
     }
 });
+
+// try{
+
+    // chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+    //     if(changeInfo.status == 'complete'){
+    //         const tabId = tab.id as number;
+    //         chrome.scripting.executeScript({
+    //             files: ['contentScript.js'],
+    //             target: { tabId }
+    //         }).then(r => console.error(r));
+    //     }
+    // });
+
+
+// }catch(e){
+//     console.log(e);
+// }
