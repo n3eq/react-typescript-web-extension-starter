@@ -1,10 +1,8 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Hello } from "@src/components/hello";
 import browser, { Tabs } from "webextension-polyfill";
 import { Scroller } from "@src/components/scroller";
 import css from "./styles.module.css";
-
-// // // //
 
 // Scripts to execute in current tab
 const scrollToTopPosition = 0;
@@ -50,6 +48,17 @@ function executeScript(position: number): void {
 // // // //
 
 export function Popup() {
+    const [movieTitle, setMovieTitle] = useState<string>('')
+
+    useEffect(() => {
+        console.log(movieTitle)
+    },[movieTitle]);
+
+    chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+        if (request.action) {
+            setMovieTitle(request.action)
+        }
+    })
     // Sends the `popupMounted` event
     React.useEffect(() => {
         browser.runtime.sendMessage({popupMounted: true});
@@ -69,6 +78,9 @@ export function Popup() {
                         executeScript(scrollToBottomPosition);
                     }}
                 />
+            </div>
+            <div>
+                {movieTitle}
             </div>
         </div>
     );

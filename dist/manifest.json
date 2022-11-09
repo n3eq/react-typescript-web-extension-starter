@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
-    "name": "Chrome Extension Starter",
-    "description": "A Chrome Extension starter kit",
+    "name": "Movie Saver",
+    "description": "Save all of your movies in one place",
     "version": "1.0.0",
     "action": {
         "default_icon": {
@@ -17,8 +17,12 @@
     "content_scripts": [
         {
             "include_globs": ["https://www.netflix.com/browse*jbv*"],
-            "js": ["js/contentScript.js"],
+            "js": ["js/netflixScript.js"],
             "matches": ["https://www.netflix.com/browse*"]
+        },
+        {
+            "js": ["js/hboScript.js"],
+            "matches": ["https://*/*"]
         }
     ],
     "icons": {
@@ -26,6 +30,6 @@
         "48": "icon-48.png",
         "128": "icon-128.png"
     },
-    "host_permissions": ["https://*/*", "http://*/*"],
+    "host_permissions": ["https://*/*"],
     "permissions": ["tabs", "activeTab", "notifications", "scripting"]
 }

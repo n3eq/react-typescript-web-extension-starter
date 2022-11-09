@@ -9,14 +9,6 @@ browser.runtime.onMessage.addListener((request: { popupMounted: boolean }) => {
     }
 });
 
-chrome.runtime.onMessage.addListener(
-    function(request, sender, sendResponse) {
-        if (request.movie)
-            sendResponse({farewell: "goodbye"});
-            console.log(request);
-    }
-);
-
 try{
 
     chrome.tabs.onUpdated.addListener(function(tabId:any, changeInfo:any, tab:any) {
@@ -26,7 +18,7 @@ try{
 
             if (tabUrl.includes('jbv')) {
                  chrome.scripting.executeScript({
-                     files: ['js/contentScript.js'],
+                     files: ['js/netflixScript.js'],
                      target: { tabId },
                 })
 

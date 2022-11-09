@@ -1,4 +1,4 @@
-setTimeout(() => {
+setTimeout(async () => {
 
     // Creating button
     const btn = document.createElement('BUTTON');
@@ -10,12 +10,9 @@ setTimeout(() => {
     const btnContainer = document.getElementsByClassName("buttonControls--container");
     btnContainer[0].appendChild(btn);
 
-    //Getting movie title
-    const movieTitle = document.getElementsByClassName('previewModal--player-titleTreatment-logo')[0].getAttribute('alt')
-    console.log(movieTitle)
-
-    chrome.runtime.sendMessage({movie: movieTitle}, function(response) {
-        console.log(response.farewell);
+    // Sending Title of movie to storage
+    await chrome.runtime.sendMessage({
+        "action": document.title
     });
 },1)
 
