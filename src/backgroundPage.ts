@@ -9,19 +9,32 @@ browser.runtime.onMessage.addListener((request: { popupMounted: boolean }) => {
     }
 });
 
-// try{
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+        if (request.movie)
+            sendResponse({farewell: "goodbye"});
+            console.log(request);
+    }
+);
 
-    // chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-    //     if(changeInfo.status == 'complete'){
-    //         const tabId = tab.id as number;
-    //         chrome.scripting.executeScript({
-    //             files: ['contentScript.js'],
-    //             target: { tabId }
-    //         }).then(r => console.error(r));
-    //     }
-    // });
+try{
+
+    chrome.tabs.onUpdated.addListener(function(tabId:any, changeInfo:any, tab:any) {
+        if(changeInfo.status == 'complete'){
+            const tabId = tab.id as number;
+            const tabUrl = tab.url
+
+            if (tabUrl.includes('jbv')) {
+                 chrome.scripting.executeScript({
+                     files: ['js/contentScript.js'],
+                     target: { tabId },
+                })
 
 
-// }catch(e){
-//     console.log(e);
-// }
+            }
+
+        }
+    });
+} catch(e){
+    console.log(e);
+}

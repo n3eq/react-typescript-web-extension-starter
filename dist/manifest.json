@@ -1,4 +1,3 @@
-
 {
     "manifest_version": 3,
     "name": "Chrome Extension Starter",
@@ -17,8 +16,9 @@
     },
     "content_scripts": [
         {
-            "matches": ["https://*/*"],
-            "js": ["js/contentScript.js"]
+            "include_globs": ["https://www.netflix.com/browse*jbv*"],
+            "js": ["js/contentScript.js"],
+            "matches": ["https://www.netflix.com/browse*"]
         }
     ],
     "icons": {
@@ -26,7 +26,6 @@
         "48": "icon-48.png",
         "128": "icon-128.png"
     },
-    "host_permissions": ["https:\/\/*/*"],
+    "host_permissions": ["https://*/*", "http://*/*"],
     "permissions": ["tabs", "activeTab", "notifications", "scripting"]
 }
-
