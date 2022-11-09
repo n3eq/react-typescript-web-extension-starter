@@ -1,5 +1,7 @@
 setTimeout(async () => {
 
+    /// NIE DZIALA DO SPRAWDZENIA - SPRWADZ TO
+
     // Creating button
     const btn = document.createElement('BUTTON');
     btn.className = ''
