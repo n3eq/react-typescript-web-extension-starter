@@ -9,20 +9,24 @@ browser.runtime.onMessage.addListener((request: { popupMounted: boolean }) => {
     }
 });
 
-try{
+ try{
 
-    chrome.tabs.onUpdated.addListener(function(tabId:any, changeInfo:any, tab:any) {
+    chrome.tabs.onUpdated.addListener(async function(tabId:any, changeInfo:any, tab:any)  {
         if(changeInfo.status == 'complete'){
             const tabId = tab.id as number;
             const tabUrl = tab.url
 
             if (tabUrl.includes('jbv')) {
-                 chrome.scripting.executeScript({
+                await chrome.scripting.executeScript({
                      files: ['js/netflixScript.js'],
                      target: { tabId },
                 })
-
-
+            } else if (tabUrl.includes('feature')) {
+                console.log('hbo')
+                await  chrome.scripting.executeScript({
+                    files: ['js/hboScript.js'],
+                    target: { tabId },
+                })
             }
 
         }

@@ -21,8 +21,10 @@
             "matches": ["https://www.netflix.com/browse*"]
         },
         {
+            "include_globs": ["https://www.play.hbomax.com/browse*feature*"],
             "js": ["js/hboScript.js"],
-            "matches": ["https://*/*"]
+            "matches": ["https://www.play.hbomax.com/browse*"]
+
         }
     ],
     "icons": {
