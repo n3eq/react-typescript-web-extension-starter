@@ -5,6 +5,7 @@ module.exports = {
         backgroundPage: path.join(__dirname, "src/backgroundPage.ts"),
         netflixScript: path.join(__dirname, "src/netflixScript.ts"),
         hboScript: path.join(__dirname, "src/hboScript.ts"),
+        disneyScript: path.join(__dirname, "src/disneyScript.ts"),
         popup: path.join(__dirname, "src/popup/index.tsx"),
     },
     output: {

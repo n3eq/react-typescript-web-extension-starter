@@ -16,15 +16,20 @@ browser.runtime.onMessage.addListener((request: { popupMounted: boolean }) => {
             const tabId = tab.id as number;
             const tabUrl = tab.url
 
-            if (tabUrl.includes('jbv')) {
+            if (tabUrl.includes('jbv' || 'title')) {
                 await chrome.scripting.executeScript({
                      files: ['js/netflixScript.js'],
                      target: { tabId },
                 })
-            } else if (tabUrl.includes('feature')) {
+            } else if (tabUrl.includes('type')) {
                 console.log('hbo')
                 await  chrome.scripting.executeScript({
                     files: ['js/hboScript.js'],
+                    target: { tabId },
+                })
+            } else if (tabUrl.includes('series' || 'movies')) {
+                await  chrome.scripting.executeScript({
+                    files: ['js/disneyScript.js'],
                     target: { tabId },
                 })
             }

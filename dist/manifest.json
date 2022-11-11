@@ -16,14 +16,22 @@
     },
     "content_scripts": [
         {
-            "include_globs": ["https://www.netflix.com/browse*jbv*"],
+            "include_globs": ["https://www.netflix.com/browse*jbv*","https://www.netflix.com/title*"],
             "js": ["js/netflixScript.js"],
-            "matches": ["https://www.netflix.com/browse*"]
+            "matches": ["https://www.netflix.com/browse*","https://www.netflix.com/title*"]
         },
         {
-            "include_globs": ["https://www.play.hbomax.com/browse*feature*"],
+            "include_globs": ["https://www.play.hbomax.com/browse*type*"],
             "js": ["js/hboScript.js"],
-            "matches": ["https://www.play.hbomax.com/browse*"]
+            "matches": ["https://www.play.hbomax.com/browse*"],
+            "run_at": "document_idle"
+
+        },
+        {
+            "include_globs": ["https://www.disneyplus.com/*series*", "https://www.disneyplus.com/*movies*"],
+            "js": ["js/disneyScript.js"],
+            "matches": ["https://www.disneyplus.com/*series*", "https://www.disneyplus.com/*movies*"],
+            "run_at": "document_end"
 
         }
     ],
