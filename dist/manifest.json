@@ -30,8 +30,7 @@
         {
             "include_globs": ["https://www.disneyplus.com/*series*", "https://www.disneyplus.com/*/movies/*"],
             "js": ["js/disneyScript.js"],
-            "matches": ["https://www.disneyplus.com/*series*", "https://www.disneyplus.com/*/movies/*"],
-            "run_at": "document_end"
+            "matches": ["https://www.disneyplus.com/*series*", "https://www.disneyplus.com/*/movies/*"]
 
         }
     ],

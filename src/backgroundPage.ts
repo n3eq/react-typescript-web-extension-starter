@@ -27,7 +27,7 @@ browser.runtime.onMessage.addListener((request: { popupMounted: boolean }) => {
                     files: ['js/hboScript.js'],
                     target: { tabId },
                 })
-            } else if (tabUrl.includes('series' || 'movies')) {
+            } else if (tabUrl.includes('series/') || tabUrl.includes('movies/')) {
                 await  chrome.scripting.executeScript({
                     files: ['js/disneyScript.js'],
                     target: { tabId },

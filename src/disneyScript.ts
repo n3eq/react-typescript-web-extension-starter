@@ -15,16 +15,17 @@
             //Creating button in container
             btnContainer[0].appendChild(btn);
 
+// Stop interval
+            clearInterval(disneyInterval)
 
             // Sending Title of movie to storage
             await chrome.runtime.sendMessage({
                 "action": document.title
             });
-            // Stop interval
-            clearInterval(disneyInterval)
+
 
         }
-    }, 1000)
+    }, 2000)
 
 
 
