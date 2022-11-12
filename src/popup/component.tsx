@@ -1,13 +1,8 @@
 import React, {useEffect, useState} from "react";
-import { Hello } from "@src/components/hello";
 import browser, { Tabs } from "webextension-polyfill";
-import { Scroller } from "@src/components/scroller";
 import css from "./styles.module.css";
 import Movies from "@src/popup/movies";
 
-// Scripts to execute in current tab
-const scrollToTopPosition = 0;
-const scrollToBottomPosition = 9999999;
 
 export interface MovieType {
     id: number,
@@ -19,6 +14,7 @@ export interface MovieType {
     genre: string,
     runtime: string,
     cast: string,
+    link: string,
 }
 
 const movies: MovieType[] = [
@@ -32,6 +28,7 @@ const movies: MovieType[] = [
         genre: 'Action',
         runtime: '2h 2m',
         cast: 'Emilia Clarke',
+        link: 'https://google.com'
     },
     {
         id: 2,
@@ -43,6 +40,7 @@ const movies: MovieType[] = [
         genre: 'Action',
         runtime: '2h 2m',
         cast: 'Emilia Clarke',
+        link: 'https://spotify.com'
     },
     {
         id: 3,
@@ -54,6 +52,7 @@ const movies: MovieType[] = [
         genre: 'Action',
         runtime: '2h 2m',
         cast: 'Emilia Clarke',
+        link: 'https://youtube.com'
     },
 ]
 
@@ -116,21 +115,6 @@ export function Popup() {
     // Renders the component tree
     return (
         <div className={css.popupContainer}>
-            {/*<div className="mx-4 my-4">*/}
-            {/*    <Hello />*/}
-            {/*    <hr />*/}
-            {/*    <Scroller*/}
-            {/*        onClickScrollTop={() => {*/}
-            {/*            executeScript(scrollToTopPosition);*/}
-            {/*        }}*/}
-            {/*        onClickScrollBottom={() => {*/}
-            {/*            executeScript(scrollToBottomPosition);*/}
-            {/*        }}*/}
-            {/*    />*/}
-            {/*</div>*/}
-            <div>
-                {movieTitle}
-            </div>
             <Movies movies={movies}/>
         </div>
     );

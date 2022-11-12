@@ -1,9 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-    @apply bg-gray-200;
+    background-color: rgb(30,41,59) ;
     width: 600px;
-    height: 800px;
+    min-height: 350px;
+    border: 1px solid rgb(40,51,68);
 }
+
+.main-box {
+    width: 100%;
+}
+
+/* NAV BAR CSS*/
+nav {
+    padding: 20px;
+}
+ul {
+    border: none;
+}
+.user-avatar {
+    align-items: end;
+    margin-left: auto;
+}
+.user-avatar img {
+    border-radius: 100px;
+    height: 35px;
+    width: 35px;
+    border: 2px solid rgb(40,51,68);
+}
+.user-avatar img:hover {
+    border: 2px solid rgb(29, 78, 216);
+}
+.watch-btn {
+    color: rgb(29, 78, 216);
+}
+/*-- NAV BAR CSS END --*/
+
+/* MOVIE LIST CSS */
+article {
+    border-top: 1px solid rgb(40,51,68) !important;
+}
+
+.rating {
+    color: white;
+}
+
+.title{
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-space: 2px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+dd {
+    color: rgb(130,145,166);
+}
+/* MOVIE LIST CSS END */
+
+
