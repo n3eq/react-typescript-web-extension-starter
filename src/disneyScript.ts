@@ -1,6 +1,7 @@
 
     // Check until site is loaded
     const disneyInterval = setInterval(async () => {
+        console.log('work');
         if (document.getElementsByClassName("sc-giOsra blOJuP")){
 
             // Selecting button container
@@ -23,7 +24,7 @@
             clearInterval(disneyInterval)
 
         }
-    }, 2000)
+    }, 1000)
 
 
 

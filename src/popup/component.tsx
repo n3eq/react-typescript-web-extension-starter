@@ -3,10 +3,59 @@ import { Hello } from "@src/components/hello";
 import browser, { Tabs } from "webextension-polyfill";
 import { Scroller } from "@src/components/scroller";
 import css from "./styles.module.css";
+import Movies from "@src/popup/movies";
 
 // Scripts to execute in current tab
 const scrollToTopPosition = 0;
 const scrollToBottomPosition = 9999999;
+
+export interface MovieType {
+    id: number,
+    image: string,
+    title: string,
+    starRating: number,
+    rating: string,
+    year: number,
+    genre: string,
+    runtime: string,
+    cast: string,
+}
+
+const movies: MovieType[] = [
+    {
+        id: 1,
+        image: 'https://m.media-amazon.com/images/M/MV5BOTgyMWQ0ZWUtN2Q2MS00NmY0LWI3OWMtNjFkMzZlNDZjNTk0XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_Ratio0.6757_AL_.jpg',
+        title: 'Harry Potter',
+        starRating: 2.33,
+        rating: 'PG-13',
+        year: 2020,
+        genre: 'Action',
+        runtime: '2h 2m',
+        cast: 'Emilia Clarke',
+    },
+    {
+        id: 2,
+        image: 'https://m.media-amazon.com/images/M/MV5BOTgyMWQ0ZWUtN2Q2MS00NmY0LWI3OWMtNjFkMzZlNDZjNTk0XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_Ratio0.6757_AL_.jpg',
+        title: 'Harry Potter',
+        starRating: 2.33,
+        rating: 'PG-13',
+        year: 2020,
+        genre: 'Action',
+        runtime: '2h 2m',
+        cast: 'Emilia Clarke',
+    },
+    {
+        id: 3,
+        image: 'https://m.media-amazon.com/images/M/MV5BOTgyMWQ0ZWUtN2Q2MS00NmY0LWI3OWMtNjFkMzZlNDZjNTk0XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_Ratio0.6757_AL_.jpg',
+        title: 'Harry Potter',
+        starRating: 2.33,
+        rating: 'PG-13',
+        year: 2020,
+        genre: 'Action',
+        runtime: '2h 2m',
+        cast: 'Emilia Clarke',
+    },
+]
 
 function scrollWindow(position: number) {
     window.scroll(0, position);
@@ -67,21 +116,22 @@ export function Popup() {
     // Renders the component tree
     return (
         <div className={css.popupContainer}>
-            <div className="mx-4 my-4">
-                <Hello />
-                <hr />
-                <Scroller
-                    onClickScrollTop={() => {
-                        executeScript(scrollToTopPosition);
-                    }}
-                    onClickScrollBottom={() => {
-                        executeScript(scrollToBottomPosition);
-                    }}
-                />
-            </div>
+            {/*<div className="mx-4 my-4">*/}
+            {/*    <Hello />*/}
+            {/*    <hr />*/}
+            {/*    <Scroller*/}
+            {/*        onClickScrollTop={() => {*/}
+            {/*            executeScript(scrollToTopPosition);*/}
+            {/*        }}*/}
+            {/*        onClickScrollBottom={() => {*/}
+            {/*            executeScript(scrollToBottomPosition);*/}
+            {/*        }}*/}
+            {/*    />*/}
+            {/*</div>*/}
             <div>
                 {movieTitle}
             </div>
+            <Movies movies={movies}/>
         </div>
     );
 }
