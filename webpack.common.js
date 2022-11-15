@@ -6,7 +6,7 @@ module.exports = {
         netflixScript: path.join(__dirname, "src/netflixScript.ts"),
         hboScript: path.join(__dirname, "src/hboScript.ts"),
         disneyScript: path.join(__dirname, "src/disneyScript.ts"),
-        popup: path.join(__dirname, "src/popup/optionIndex.tsx"),
+        popup: path.join(__dirname, "src/popup/index.tsx"),
     },
     output: {
         path: path.join(__dirname, "dist/js"),

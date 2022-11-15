@@ -4,6 +4,7 @@ import List from './list';
 import ListItem from './movieListItem';
 import React from 'react';
 import {MovieType} from './component';
+import {Link} from "react-router-dom";
 
 interface PropType {
     movies: MovieType[],
@@ -19,10 +20,10 @@ export default function Movies({movies}: PropType) {
                         <a className="text-center block border border-blue-500 rounded py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white" href="#">Movie List</a>
                     </li>
                     <li className="mr-6">
-                        <a className="text-blue-500 hover:text-blue-800 block py-2 px-4 " href="options.html">Search Movies</a>
+                        <a className="text-blue-500 hover:text-blue-800 block py-2 px-4 " href="#">Search Movies</a>
                     </li>
                     <li className="mr-6">
-                        <a className="text-blue-500 hover:text-blue-800 block py-2 px-4 " href="#">Settings</a>
+                        <Link to='../options' className="text-blue-500 hover:text-blue-800 block py-2 px-4">Settings</Link>
                     </li>
                     <li className="mr-6 user-avatar">
                         {/* Here we need change img to img that we are going to get from user account*/}
