@@ -28,8 +28,8 @@ export default function ListItem({ movie }: PropType) {
                         <dd>{movie.starRating}</dd>
                     </div>
                     <div>
-                        <dt className="sr-only">Rating</dt>
-                        <dd className="px-1.5 ring-1 ring-slate-200 rounded dark:ring-slate-600 rating">{movie.rating}</dd>
+                        <dt className="sr-only">Type</dt>
+                        <dd className="px-1.5 ring-1 ring-slate-200 rounded dark:ring-slate-600 rating">{movie.type}</dd>
                     </div>
                     <div className="ml-2">
                         <dt className="sr-only">Year</dt>

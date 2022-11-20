@@ -1,11 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import css from "./styles.module.css";
-import {
-    createBrowserRouter,
-    RouterProvider,
-    Route,
-    Link,
-} from "react-router-dom";
+import NavBar from "@src/popup/navbar";
 
 
 const OptionComponent = () => {
@@ -13,7 +8,10 @@ const OptionComponent = () => {
     // Renders the component tree
     return (
         <div className={css.popupContainer}>
-            <Link to={'../popup.html'}>Here</Link>
+            <div className="divide-y divide-slate-100 main-box">
+                <NavBar />
+
+            </div>
         </div>
     );
 }

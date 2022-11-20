@@ -7,7 +7,6 @@
 body {
     background-color: rgb(30,41,59) ;
     width: 600px;
-    min-height: 350px;
     border: 1px solid rgb(40,51,68);
 }
 
@@ -38,7 +37,28 @@ ul {
 .watch-btn {
     color: rgb(29, 78, 216);
 }
+.test {
+    background-color: red;
+}
 /*-- NAV BAR CSS END --*/
+
+/*-- SEARCH LIST CSS --*/
+.searchBar {
+    border: none;
+    text-align: left;
+}
+.searchInput {
+    color: white;
+    text-align: center;
+    border: 1px solid rgb(40,51,68) !important;
+    width: 50%;
+    padding: 8px;
+    background-color: rgb(30,41,59) ;
+}
+.searchButton {
+    color: white;
+}
+/*-- SEARCH LIST CSS END --*/
 
 /* MOVIE LIST CSS */
 article {

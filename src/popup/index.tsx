@@ -10,19 +10,22 @@ import {
     Link,
 } from "react-router-dom";
 import OptionComponent from "../popup/optionComponent"
+import SearchListComponent from "@src/popup/SearchListComponent";
 
 const router = createBrowserRouter([
     {
         path: "/popup.html",
         element: (
-            <div>
                 <Popup />
-            </div>
         ),
     },
     {
         path: "options",
         element: <OptionComponent />,
+    },
+    {
+        path: "searchList",
+        element: <SearchListComponent />,
     },
 ]);
 
