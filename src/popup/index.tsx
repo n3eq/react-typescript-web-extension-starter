@@ -2,12 +2,10 @@ import * as React from "react";
 import browser from "webextension-polyfill";
 import { Popup } from "../popup/component";
 import "../css/app.css";
-import ReactDOM, { render } from "react-dom";
+import ReactDOM from "react-dom";
 import {
     createBrowserRouter,
     RouterProvider,
-    Route,
-    Link,
 } from "react-router-dom";
 import OptionComponent from "../popup/optionComponent"
 import SearchListComponent from "@src/popup/SearchListComponent";
@@ -16,7 +14,7 @@ const router = createBrowserRouter([
     {
         path: "/popup.html",
         element: (
-                <Popup />
+                <OptionComponent />
         ),
     },
     {

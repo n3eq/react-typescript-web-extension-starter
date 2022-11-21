@@ -29,7 +29,7 @@ const SearchListComponent = () => {
     const getMovie = async () => {
         setErrorResponse('Loading...')
         setIsError(true)
-        const auth = 'k_a91t8yu4';
+        const auth = 'k_sl9h1vn1';
         // Getting movie id
         const getId = `https://imdb-api.com/en/API/SearchMovie/${auth}/${movie}`
         const getIdResponse = await fetch(getId);
@@ -37,14 +37,14 @@ const SearchListComponent = () => {
             throw Error('Error');
         }
         const commits = await getIdResponse.json();
-
-        if (commits.expression !== null) {
+        console.log(commits)
+        if (commits.ok) {
             const id = commits.results[0].id
             // Getting movie details
 
             const getMovie = `https://imdb-api.com/en/API/Title/${auth}/${id}/Images,Ratings,Wikipedia`
             const getMovieResponse = await fetch(getMovie);
-            if(!getIdResponse.ok) {
+            if(!getMovieResponse.ok) {
                 throw Error('Error');
             }
             const commitResponse = await getMovieResponse.json();
